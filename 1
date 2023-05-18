@@ -16,8 +16,9 @@ services:
     env_file: .env
     volumes:
       - static:/backend_static
+      - media:/media
     depends_on:
-      - db  
+      - db
   frontend:
     image: spaik89/kittygram_frontend
     command: cp -r /app/build/. /frontend_static/
@@ -27,6 +28,7 @@ services:
     image: spaik89/kittygram_gateway
     env_file: .env
     volumes:
-      - static:/staticfiles/
+      - static:/static/
+      - media:/media/
     ports:
       - 9000:80
