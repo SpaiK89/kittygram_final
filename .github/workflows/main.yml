@@ -119,7 +119,7 @@ jobs:
         with:
           context: ./nginx/
           push: true
-          tags: spaik89kittygram_gateway:latest
+          tags: spaik89/kittygram_gateway:latest
   deploy:
     runs-on: ubuntu-latest
     needs: 
